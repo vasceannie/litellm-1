@@ -1,5 +1,7 @@
 .venv
 .env
+.config.yaml
+docker-compose.mine.yml
 .newenv
 newenv/*
 litellm/proxy/myenv/*
