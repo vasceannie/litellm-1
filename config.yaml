@@ -25,11 +25,11 @@ model_list:
     litellm_params:
       model: openai/o1-preview
       api_key: os.environ/OPENAI_API_KEY
-  - model_name: "text-embeddings-large"
+  - model_name: "text-embedding-3-large"
     litellm_params:
       model: openai/text-embedding-3-large
       api_key: os.environ/OPENAI_API_KEY
-  - model_name: "text-embeddings-small"
+  - model_name: "text-embeddings-3-small"
     litellm_params:
       model: openai/text-embedding-3-small
       api_key: os.environ/OPENAI_API_KEY
@@ -128,7 +128,7 @@ litellm_settings:
   cache: True
   cache_params:
     type: qdrant-semantic
-    qdrant_semantic_cache_embedding_model: mxbai-embed-large
+    qdrant_semantic_cache_embedding_model: openai/text-embedding-3-small
     qdrant_collection_name: litellm_cache
     qdrant_quantization_config: binary
     similarity_threshold: 0.8
