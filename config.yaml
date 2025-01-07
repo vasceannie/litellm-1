@@ -119,16 +119,25 @@ model_list:
 litellm_settings:
   set_verbose: True
   drop_params: True
-  success_callback: ["prometheus"]
-  failure_callback: ["prometheus"]
+  success_callback: ["langfuse"]
+  failure_callback: ["langfuse"]
   service_callback: ["prometheus"]
+  langfuse_default_tags:
+    - cache_hit
+    - cache_key
+    - proxy_base_url
+    - user_api_key_alias
+    - user_api_key_user_id
+    - user_api_key_user_email
+    - user_api_key_team_alias
+    - semantic-similarity
   num_retries: 5
   request_timeout: 600
   telemetry: False
   cache: True
   cache_params:
     type: qdrant-semantic
-    qdrant_semantic_cache_embedding_model: openai/text-embedding-3-small
+    qdrant_semantic_cache_embedding_model: ollama/mxbai-embed-large
     qdrant_collection_name: litellm_cache
     qdrant_quantization_config: binary
     similarity_threshold: 0.8
